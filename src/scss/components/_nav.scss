@@ -1,0 +1,181 @@
+.header {
+  width: 100%;
+  margin-bottom: 50px;
+  background: map-get($colors, primary);
+
+  li {
+    cursor: pointer;
+  }
+
+  &__indent {
+    display: flex;
+    justify-content: space-between;
+    min-width: 1280px;
+    max-width: 1360px;
+    height: 60px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    a {
+      display: block;
+      width: 130px;
+      height: 30px;
+      background: url('../assets/logo.svg') left center no-repeat;
+    }
+  }
+
+  .menu {
+    &__main {
+      display: flex;
+      align-items: stretch;
+      height: 100%;
+      margin: 0;
+
+      &-item {
+        position: relative;
+        list-style: none;
+        font-family: Roboto;
+        font-size: 16px;
+        text-transform: uppercase;
+        padding: 0 15px;
+        display: flex;
+        align-items: center;
+
+        &:hover,
+        &_active {
+          background: #338ace;
+        }
+
+        &_active {
+          font-weight: bold;
+        }
+
+        a {
+          color: #ffffff;
+          text-decoration: none;
+        }
+      }
+    }
+
+    &__sub {
+      @extend %dropdown;
+      left: 0;
+      min-width: 200px;
+
+      &-item {
+        list-style: none;
+        padding: 15px 15px;
+        font-weight: normal;
+
+        &:hover {
+          background: #f5f5f5;
+        }
+        a,
+        a:visited {
+          color: map-get($colors, dark-text);
+        }
+      }
+    }
+  }
+
+  .account {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    position: relative;
+    font-family: Roboto;
+    color: map-get($colors, dark_text);
+
+    &__info {
+      @extend %dropdown;
+      right: 0;
+      width: 250px;
+
+      div {
+        padding: 15px;
+      }
+    }
+
+    &__company {
+      font-weight: bold;
+      line-height: 1.3;
+      border-bottom: 1px solid #e3e3e3;
+    }
+
+    &__manager {
+      border-bottom: 1px solid #e3e3e3;
+
+      &-title {
+        margin: 0 0 15px 0;
+        font-weight: bold;
+      }
+
+      &-name {
+        font-weight: bold;
+
+        margin: 0 0 15px 0;
+      }
+
+      &-info {
+        padding: 3px 0 3px 30px;
+        line-height: 1;
+        margin: 0 0 6px 0;
+
+        &_name {
+          background: url('../assets/icon_manager.svg') left center no-repeat;
+        }
+
+        &_phone {
+          background: url('../assets/icon_phone.svg') left center no-repeat;
+        }
+
+        &_mail {
+          background: url('../assets/icon_email.svg') left center no-repeat;
+        }
+
+        &_skype {
+          background: url('../assets/icon_skype.svg') left center no-repeat;
+        }
+      }
+    }
+
+    &:hover {
+      background: #338ace;
+    }
+
+    &__name {
+      color: white;
+      margin-right: 10px;
+    }
+
+    &__icon {
+      width: 30px;
+      height: 30px;
+      background: url('../assets/icon_account.svg') center center no-repeat;
+    }
+
+    &__link {
+      a,
+      a:visited {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: map-get($colors, dark_text);
+      }
+      &:hover {
+        background: #f5f5f5;
+      }
+    }
+  }
+
+  .dropdown {
+    .dropdown-sub {
+      &_show {
+        display: block;
+      }
+    }
+  }
+}
